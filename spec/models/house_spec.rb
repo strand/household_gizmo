@@ -9,7 +9,7 @@ describe House do
     end
 
     it "calculates the house's total pay" do
-      @house.total_pay.should == 2500.00
+      @house.total_pay.should be 5400
     end
   end
 end
