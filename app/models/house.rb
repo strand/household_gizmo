@@ -1,3 +1,12 @@
 class House < ActiveRecord::Base
-  # attr_accessible :title, :body
+  has_many :members
+  attr_accessible :rent
+
+  def total_pay
+    total = 0
+    self.members.each do |member|
+      total += member.monthly_pay
+    end
+    total
+  end
 end

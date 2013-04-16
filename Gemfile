@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'sqlite3'
+gem 'pg'
 
 gem 'money-rails'
 
@@ -13,7 +13,11 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
-  gem 'cucumber'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'cucumber-rails'
 end
 
 gem 'jquery-rails'
