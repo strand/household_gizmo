@@ -4,6 +4,8 @@ gem 'rails', '3.2.13'
 gem 'pg'
 
 gem 'money-rails'
+gem 'simple_form'
+gem "twitter-bootstrap-rails"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
