@@ -1,12 +1,18 @@
 class Member < ActiveRecord::Base
   belongs_to :house
-  attr_accessor :work_hours, :house_hours, :pay_rate
+  monetize :pay_rate_cents
 
   def monthly_pay
-    @work_hours * @pay_rate
+    self.work_hours * self.pay_rate_cents
   end
 
   def deduction
-    @house_hours * @pay_rate
+    self.house_hours * self.pay_rate_cents
+  end
+
+  def portion_of_rent
+    rent      = self.house.rent_cents
+    total_pay = self.house.total_pay
+    rent * (self.monthly_pay / total_pay)
   end
 end

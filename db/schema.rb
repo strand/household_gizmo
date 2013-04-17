@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20130416153728) do
     t.string   "pay_rate_currency", :default => "USD", :null => false
     t.decimal  "work_hours"
     t.decimal  "house_hours"
+    t.integer  "house_id"
     t.datetime "created_at",                           :null => false
     t.datetime "updated_at",                           :null => false
   end

@@ -1,8 +1,9 @@
 class House < ActiveRecord::Base
   has_many :members
-  attr_accessor :rent
+  monetize :rent_cents
 
   def total_pay
-    self.members.map { |member| member.monthly_pay }.sum
+
+    self.members.map { |m| m.monthly_pay }.sum
   end
 end
