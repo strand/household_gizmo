@@ -1,0 +1,9 @@
+
+= simple_form_for(@member, :html => {:class => 'form-vertical' }) do |form|
+  = form.error_notification
+  .inputs
+    - %i(name email).each do |input|
+      = form.input input
+    = select_tag "pronouns", options_for_select(%w[she he they my_name other])
+  .actions
+    = form.button :submit
