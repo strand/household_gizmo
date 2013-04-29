@@ -16,6 +16,9 @@ ActiveRecord::Schema.define(:version => 20130416153728) do
   create_table "houses", :force => true do |t|
     t.integer  "rent_cents",    :default => 0,     :null => false
     t.string   "rent_currency", :default => "USD", :null => false
+    t.integer  "members_id"
+    t.string   "name"
+    t.string   "address"
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
   end

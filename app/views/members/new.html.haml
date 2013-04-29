@@ -1,9 +1,10 @@
-
 = simple_form_for(@member, :html => {:class => 'form-vertical' }) do |form|
   = form.error_notification
   .inputs
     - %i(name email).each do |input|
       = form.input input
-    = select_tag "pronouns", options_for_select(%w[she he they my_name other])
+    = form.select :pronoun, options_for_select(%w[she he they my_name other])
   .actions
+    - if @house_size.present? && @house_size > 1
+      = link_to "Add expenses", "expenses/new"
     = form.button :submit
