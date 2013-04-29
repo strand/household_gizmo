@@ -1,4 +1,4 @@
-HouseworkGizmo::Application.routes.draw do
+HouseholdGizmo::Application.routes.draw do
   root :to => 'houses#index'
 
   resources :houses
