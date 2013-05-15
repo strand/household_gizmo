@@ -1,6 +1,6 @@
 class House < ActiveRecord::Base
   has_many :members
-  monetize :rent_cents
+  has_many :expenses
 
   attr_accessible :address, :name
 
