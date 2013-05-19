@@ -4,6 +4,7 @@ class CreateHouses < ActiveRecord::Migration
       t.references :members
       t.string     :name
       t.string     :address
+      t.text       :board
 
       t.timestamps
     end

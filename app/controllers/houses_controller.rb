@@ -3,25 +3,34 @@ class HousesController < ApplicationController
     if House.all.count == 0
       @house = House.new
     else
-      redirect_to controller: 'expenses', action: 'new'
+      @house = House.first
+      redirect_to house_path @house.id
     end
   end
 
   def create
     @house = House.new params[:house]
-    save_house
+    if @house.save
+      redirect_to  house_path @house.id
+    else
+      render action: 'index'
+    end
   end
 
   def update
-    @house = House.find params[:house][:id]
+    @house = House.find params[:id]
+    if @house.update_attributes params[:house]
+      redirect_to @house, notice: 'House was successfully updated.'
+    else
+      render action: "edit"
+    end
   end
 
-  protected
-  def save_house
-    if @house.save
-      redirect_to controller: 'expenses', action: 'new'
-    else
-      render      action: 'index'
-    end
+  def show
+    @house = House.find params[:id]
+  end
+
+  def edit
+    @house = House.find params[:id]
   end
 end

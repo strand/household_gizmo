@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20130508032158) do
     t.integer  "members_id"
     t.string   "name"
     t.string   "address"
+    t.text     "board"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
