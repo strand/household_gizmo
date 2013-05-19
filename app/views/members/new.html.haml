@@ -5,6 +5,5 @@
       = form.input input
     = form.select :pronoun, options_for_select(%w[she he they my_name other])
   .actions
-    - if @house_size.present? && @house_size > 1
-      = link_to "Add expenses", "expenses/new"
+    = link_to "Add expenses", "expenses/new"
     = form.button :submit
