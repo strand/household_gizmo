@@ -1,2 +1,16 @@
+= simple_form_for house, :html => {:class => 'form-inline' } do |form|
+  .inputs
+    = form.input :board_title
+    = form.input :board_content,
+                 placeholder: "Groceries, todos, whatever",
+                 input_html: { class: "span6" }
+    - if house.versions
+      - house.versions.reverse.first(5).each do |version|
+        / TODO Make this a helper or a partial.
+        - if version = version.reify
+          - title = version.board_title.blank? ? "No title" : version.board_title
+          - updated_at = distance_of_time_in_words_to_now version.updated_at
+          - title = "#{title} – " + "#{updated_at} ago"
+          %p= link_to title, "url_to_be_filled_in_later"
 = render 'form'
 = link_to "Delete House", { controller: :houses, action: 'destroy', id: house.id }, confirm: "Are you sure? There is no undo.", method: :delete, class: "btn btn-danger"

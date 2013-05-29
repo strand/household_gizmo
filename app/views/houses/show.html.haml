@@ -1,20 +1,3 @@
 %h2
   = house.name
   %sup= link_to "Edit house", edit_house_path
-= simple_form_for house, :html => {:class => 'form-inline' } do |form|
-  .inputs
-    = form.input :board_title
-    = form.input :board_content,
-                 placeholder: "Groceries, todos, whatever",
-                 input_html: { class: "span6" }
-    - house.versions.reverse.first(5).each do |version|
-      - title = "#{version.reify.board_title} – " + "#{distance_of_time_in_words_to_now version.reify.updated_at} ago"
-      %p= link_to title, "url_to_be_filled_in_later"
-
-    / = form.simple_fields_for board do |f|
-    /   = f.input :title
-    /   = f.input :content,
-    /                placeholder: "Groceries, todos, whatever",
-    /                input_html: { class: "span6" }
-  .actions
-    = form.button :submit

@@ -14,8 +14,9 @@
 ActiveRecord::Schema.define(:version => 20130519201446) do
 
   create_table "boards", :force => true do |t|
-    t.text   "content"
-    t.string "title"
+    t.text    "content"
+    t.string  "title"
+    t.integer "house_id"
   end
 
   create_table "expenses", :force => true do |t|
