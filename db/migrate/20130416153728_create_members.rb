@@ -5,6 +5,9 @@ class CreateMembers < ActiveRecord::Migration
       t.decimal    :work_hours
       t.decimal    :house_hours
       t.references :house
+      t.string     :name
+      t.string     :email
+      t.string     :pronoun
 
       t.timestamps
     end

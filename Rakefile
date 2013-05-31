@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-HouseworkGizmo::Application.load_tasks
+HouseholdGizmo::Application.load_tasks
