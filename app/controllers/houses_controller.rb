@@ -16,6 +16,7 @@ class HousesController < ApplicationController
 
   def update
     if house.update_attributes params[:house]
+      binding.pry
       redirect_to house, notice: 'House was successfully updated.'
     else
       render action: "edit"
@@ -26,4 +27,5 @@ class HousesController < ApplicationController
     house.destroy
     redirect_to houses_path, :notice => "Successfully destroyed house."
   end
+
 end

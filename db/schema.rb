@@ -31,10 +31,8 @@ ActiveRecord::Schema.define(:version => 20130519201446) do
     t.integer  "members_id"
     t.string   "name"
     t.string   "address"
-    t.text     "board_content"
-    t.string   "board_title"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "members", :force => true do |t|
