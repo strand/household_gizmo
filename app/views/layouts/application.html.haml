@@ -25,6 +25,8 @@
             %span.icon-bar
             %span.icon-bar
           %a.brand(href="#") Housework Gizmo
+          - if member_signed_in?
+            = link_to "sign out", destroy_member_session_path, method: :delete
           .container.nav-collapse
 
     .container-fluid
