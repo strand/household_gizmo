@@ -6,6 +6,7 @@ gem 'pg'
 gem 'money-rails'
 gem 'simple_form'
 gem 'haml-rails'
+gem 'devise'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
