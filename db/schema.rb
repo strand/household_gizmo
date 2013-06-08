@@ -13,11 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130519201446) do
 
-  create_table "boards", :force => true do |t|
-    t.text   "content"
-    t.string "title"
-  end
-
   create_table "expenses", :force => true do |t|
     t.string   "title"
     t.integer  "amount_cents",    :default => 0,     :null => false
